@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B68290215CC182900092C98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B68290115CC182900092C98 /* UIKit.framework */; };
+		6B68290415CC182900092C98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B68290315CC182900092C98 /* Foundation.framework */; };
+		6B68290615CC182900092C98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B68290515CC182900092C98 /* CoreGraphics.framework */; };
+		6B68290C15CC182900092C98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B68290A15CC182900092C98 /* InfoPlist.strings */; };
+		6B68290E15CC182900092C98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68290D15CC182900092C98 /* main.m */; };
+		6B68291215CC182900092C98 /* PVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68291115CC182900092C98 /* PVAppDelegate.m */; };
+		6B68291515CC182900092C98 /* PVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68291415CC182900092C98 /* PVViewController.m */; };
+		6B68291815CC182900092C98 /* PVViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B68291615CC182900092C98 /* PVViewController_iPhone.xib */; };
+		6B68291B15CC182900092C98 /* PVViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B68291915CC182900092C98 /* PVViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B6828FD15CC182900092C98 /* Password Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Vault.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B68290115CC182900092C98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6B68290315CC182900092C98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6B68290515CC182900092C98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6B68290915CC182900092C98 /* Password Vault-Info.plist */ = {isa = PBXFileReference; path = "Password Vault-Info.plist"; sourceTree = "<group>"; };
+		6B68290B15CC182900092C98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6B68290D15CC182900092C98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6B68290F15CC182900092C98 /* Password Vault-Prefix.pch */ = {isa = PBXFileReference; path = "Password Vault-Prefix.pch"; sourceTree = "<group>"; };
+		6B68291015CC182900092C98 /* PVAppDelegate.h */ = {isa = PBXFileReference; path = PVAppDelegate.h; sourceTree = "<group>"; };
+		6B68291115CC182900092C98 /* PVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVAppDelegate.m; sourceTree = "<group>"; };
+		6B68291315CC182900092C98 /* PVViewController.h */ = {isa = PBXFileReference; path = PVViewController.h; sourceTree = "<group>"; };
+		6B68291415CC182900092C98 /* PVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVViewController.m; sourceTree = "<group>"; };
+		6B68291715CC182900092C98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PVViewController_iPhone.xib; sourceTree = "<group>"; };
+		6B68291A15CC182900092C98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PVViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B6828FA15CC182900092C98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B68290215CC182900092C98 /* UIKit.framework in Frameworks */,
+				6B68290415CC182900092C98 /* Foundation.framework in Frameworks */,
+				6B68290615CC182900092C98 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B6828F215CC182900092C98 = {
+			isa = PBXGroup;
+			children = (
+				6B68290715CC182900092C98 /* Password Vault */,
+				6B68290015CC182900092C98 /* Frameworks */,
+				6B6828FE15CC182900092C98 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B6828FE15CC182900092C98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B6828FD15CC182900092C98 /* Password Vault.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B68290015CC182900092C98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B68290115CC182900092C98 /* UIKit.framework */,
+				6B68290315CC182900092C98 /* Foundation.framework */,
+				6B68290515CC182900092C98 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B68290715CC182900092C98 /* Password Vault */ = {
+			isa = PBXGroup;
+			children = (
+				6B68291015CC182900092C98 /* PVAppDelegate.h */,
+				6B68291115CC182900092C98 /* PVAppDelegate.m */,
+				6B68291315CC182900092C98 /* PVViewController.h */,
+				6B68291415CC182900092C98 /* PVViewController.m */,
+				6B68291615CC182900092C98 /* PVViewController_iPhone.xib */,
+				6B68291915CC182900092C98 /* PVViewController_iPad.xib */,
+				6B68290815CC182900092C98 /* Supporting Files */,
+			);
+			path = "Password Vault";
+			sourceTree = "<group>";
+		};
+		6B68290815CC182900092C98 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B68290915CC182900092C98 /* Password Vault-Info.plist */,
+				6B68290A15CC182900092C98 /* InfoPlist.strings */,
+				6B68290D15CC182900092C98 /* main.m */,
+				6B68290F15CC182900092C98 /* Password Vault-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B6828FC15CC182900092C98 /* Password Vault */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B68291E15CC182900092C98 /* Build configuration list for PBXNativeTarget "Password Vault" */;
+			buildPhases = (
+				6B6828F915CC182900092C98 /* Sources */,
+				6B6828FA15CC182900092C98 /* Frameworks */,
+				6B6828FB15CC182900092C98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Password Vault";
+			productName = "Password Vault";
+			productReference = 6B6828FD15CC182900092C98 /* Password Vault.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B6828F415CC182900092C98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PV;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 6B6828F715CC182900092C98 /* Build configuration list for PBXProject "Password Vault" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6B6828F215CC182900092C98;
+			productRefGroup = 6B6828FE15CC182900092C98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B6828FC15CC182900092C98 /* Password Vault */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B6828FB15CC182900092C98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B68290C15CC182900092C98 /* InfoPlist.strings in Resources */,
+				6B68291815CC182900092C98 /* PVViewController_iPhone.xib in Resources */,
+				6B68291B15CC182900092C98 /* PVViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B6828F915CC182900092C98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B68290E15CC182900092C98 /* main.m in Sources */,
+				6B68291215CC182900092C98 /* PVAppDelegate.m in Sources */,
+				6B68291515CC182900092C98 /* PVViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6B68290A15CC182900092C98 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B68290B15CC182900092C98 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6B68291615CC182900092C98 /* PVViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B68291715CC182900092C98 /* en */,
+			);
+			name = PVViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		6B68291915CC182900092C98 /* PVViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B68291A15CC182900092C98 /* en */,
+			);
+			name = PVViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B68291C15CC182900092C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B68291D15CC182900092C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B68291F15CC182900092C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Password Vault/Password Vault-Prefix.pch";
+				INFOPLIST_FILE = "Password Vault/Password Vault-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6B68292015CC182900092C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Password Vault/Password Vault-Prefix.pch";
+				INFOPLIST_FILE = "Password Vault/Password Vault-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B6828F715CC182900092C98 /* Build configuration list for PBXProject "Password Vault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B68291C15CC182900092C98 /* Debug */,
+				6B68291D15CC182900092C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B68291E15CC182900092C98 /* Build configuration list for PBXNativeTarget "Password Vault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B68291F15CC182900092C98 /* Debug */,
+				6B68292015CC182900092C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B6828F415CC182900092C98 /* Project object */;
+}
