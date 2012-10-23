@@ -13,7 +13,7 @@
 @interface PVAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) PVViewController *viewController;
+@property (strong, nonatomic) UINavigationController *navigationController;
 
 @end

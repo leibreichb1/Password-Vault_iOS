@@ -14,6 +14,7 @@
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -21,11 +22,16 @@
     // Override point for customization after application launch.
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 	    self.viewController = [[PVViewController alloc] initWithNibName:@"PVViewController_iPhone" bundle:nil];
+		self.navigationController = [[UINavigationController alloc] initWithRootViewController:_viewController];
 	} else {
 	    self.viewController = [[PVViewController alloc] initWithNibName:@"PVViewController_iPad" bundle:nil];
+		self.navigationController = [[UINavigationController alloc] initWithRootViewController:_viewController];
 	}
-	self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+	
+	self.window.rootViewController = self.navigationController;
+    
+	[self.window makeKeyAndVisible];
+	
     return YES;
 }
 

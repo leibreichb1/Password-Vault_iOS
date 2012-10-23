@@ -7,32 +7,125 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074D203816305FA9004C732F /* PVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D203716305FA9004C732F /* PVCell.m */; };
+		074D203B16305FBB004C732F /* PVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074D203A16305FBA004C732F /* PVCell.xib */; };
+		074D20411630926E004C732F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074D20401630926E004C732F /* CoreLocation.framework */; };
+		07562F33162F9DBD0045A0CB /* PVConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F31162F9DBD0045A0CB /* PVConversationListViewController.m */; };
+		07562F34162F9DBD0045A0CB /* PVConversationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07562F32162F9DBD0045A0CB /* PVConversationListViewController.xib */; };
+		07562F35162FA05C0045A0CB /* password.db in Resources */ = {isa = PBXBuildFile; fileRef = 07562F2F162F988B0045A0CB /* password.db */; };
+		07562F40162FA8FE0045A0CB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F37162FA7C60045A0CB /* FMDatabase.m */; };
+		07562F41162FA8FE0045A0CB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F39162FA7C60045A0CB /* FMDatabaseAdditions.m */; };
+		07562F42162FA8FE0045A0CB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F3D162FA7C60045A0CB /* FMDatabaseQueue.m */; };
+		07562F43162FA8FE0045A0CB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F3F162FA7C60045A0CB /* FMResultSet.m */; };
+		07CDE3E2163629FA009422CA /* PVConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CDE3E0163629FA009422CA /* PVConversationViewController.m */; };
+		07CDE3E3163629FA009422CA /* PVConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CDE3E1163629FA009422CA /* PVConversationViewController.xib */; };
+		6B103C3C15D2B7E300B74DA4 /* PVOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B103C3A15D2B7E300B74DA4 /* PVOptionsViewController.m */; };
+		6B103C3D15D2B7E300B74DA4 /* PVOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B103C3B15D2B7E300B74DA4 /* PVOptionsViewController.xib */; };
+		6B1658FB15CFF5C600A91A80 /* PVSiteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1658F915CFF5C600A91A80 /* PVSiteListViewController.m */; };
+		6B1658FC15CFF5C600A91A80 /* PVSiteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1658FA15CFF5C600A91A80 /* PVSiteListViewController.xib */; };
+		6B29A69315D0375300AD72D0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B29A69215D0375300AD72D0 /* libsqlite3.dylib */; };
+		6B29A6AF15D0500D00AD72D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68290D15CC182900092C98 /* main.m */; };
+		6B29A6B915D05CAC00AD72D0 /* PVDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B29A6B815D05CAC00AD72D0 /* PVDataManager.m */; };
+		6B2F1CC9162DD38C0027463A /* PVLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2F1CC7162DD38C0027463A /* PVLocationViewController.m */; };
+		6B2F1CCA162DD38C0027463A /* PVLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2F1CC8162DD38C0027463A /* PVLocationViewController.xib */; };
+		6B37704815D2D46D00511889 /* PVSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B37704615D2D46D00511889 /* PVSelectionViewController.m */; };
+		6B37704915D2D46D00511889 /* PVSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B37704715D2D46D00511889 /* PVSelectionViewController.xib */; };
+		6B37704C15D2E73100511889 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B37704B15D2E73100511889 /* AddressBook.framework */; };
+		6B3DCFAF15D1750300EFF49E /* PVAddSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3DCFAD15D1750300EFF49E /* PVAddSiteViewController.m */; };
+		6B3DCFB015D1750300EFF49E /* PVAddSiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3DCFAE15D1750300EFF49E /* PVAddSiteViewController.xib */; };
+		6B3DCFB515D1828800EFF49E /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B3DCFB415D1828800EFF49E /* keys.plist */; };
+		6B576450162DCAD1002999AF /* PVSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B57644E162DCAD1002999AF /* PVSelectViewController.m */; };
+		6B576451162DCAD1002999AF /* PVSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B57644F162DCAD1002999AF /* PVSelectViewController.xib */; };
+		6B5A262A15D3F2BE00A30A9C /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B5A262815D3F2BE00A30A9C /* blueButton.png */; };
+		6B5A262B15D3F2BE00A30A9C /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B5A262915D3F2BE00A30A9C /* whiteButton.png */; };
+		6B62279D162F118D00A62B05 /* PVCreateChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62279B162F118D00A62B05 /* PVCreateChatViewController.m */; };
+		6B62279E162F118D00A62B05 /* PVCreateChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B62279C162F118D00A62B05 /* PVCreateChatViewController.xib */; };
 		6B68290215CC182900092C98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B68290115CC182900092C98 /* UIKit.framework */; };
 		6B68290415CC182900092C98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B68290315CC182900092C98 /* Foundation.framework */; };
 		6B68290615CC182900092C98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B68290515CC182900092C98 /* CoreGraphics.framework */; };
 		6B68290C15CC182900092C98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B68290A15CC182900092C98 /* InfoPlist.strings */; };
-		6B68290E15CC182900092C98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68290D15CC182900092C98 /* main.m */; };
 		6B68291215CC182900092C98 /* PVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68291115CC182900092C98 /* PVAppDelegate.m */; };
 		6B68291515CC182900092C98 /* PVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68291415CC182900092C98 /* PVViewController.m */; };
 		6B68291815CC182900092C98 /* PVViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B68291615CC182900092C98 /* PVViewController_iPhone.xib */; };
 		6B68291B15CC182900092C98 /* PVViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B68291915CC182900092C98 /* PVViewController_iPad.xib */; };
+		6BA39A8615CC264800E56915 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA39A8515CC264800E56915 /* libsqlite3.0.dylib */; };
+		6BA9FB6115D012ED008CD135 /* DDAlertPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B16591E15D0115100A91A80 /* DDAlertPrompt.m */; };
+		6BD20D7815D296A80023C625 /* PVSiteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD20D7615D296A80023C625 /* PVSiteDetailsViewController.m */; };
+		6BD20D7915D296A80023C625 /* PVSiteDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD20D7715D296A80023C625 /* PVSiteDetailsViewController.xib */; };
+		6BF386481624A07100543A86 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF386471624A07100543A86 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074D203616305FA9004C732F /* PVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVCell.h; sourceTree = "<group>"; };
+		074D203716305FA9004C732F /* PVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVCell.m; sourceTree = "<group>"; };
+		074D203A16305FBA004C732F /* PVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVCell.xib; sourceTree = "<group>"; };
+		074D20401630926E004C732F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		07562F2F162F988B0045A0CB /* password.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = password.db; sourceTree = "<group>"; };
+		07562F30162F9DBD0045A0CB /* PVConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVConversationListViewController.h; sourceTree = "<group>"; };
+		07562F31162F9DBD0045A0CB /* PVConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVConversationListViewController.m; sourceTree = "<group>"; };
+		07562F32162F9DBD0045A0CB /* PVConversationListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVConversationListViewController.xib; sourceTree = "<group>"; };
+		07562F36162FA7C60045A0CB /* FMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		07562F37162FA7C60045A0CB /* FMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		07562F38162FA7C60045A0CB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		07562F39162FA7C60045A0CB /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		07562F3A162FA7C60045A0CB /* FMDatabasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		07562F3B162FA7C60045A0CB /* FMDatabasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		07562F3C162FA7C60045A0CB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		07562F3D162FA7C60045A0CB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		07562F3E162FA7C60045A0CB /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		07562F3F162FA7C60045A0CB /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		07CDE3DF163629FA009422CA /* PVConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVConversationViewController.h; sourceTree = "<group>"; };
+		07CDE3E0163629FA009422CA /* PVConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVConversationViewController.m; sourceTree = "<group>"; };
+		07CDE3E1163629FA009422CA /* PVConversationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVConversationViewController.xib; sourceTree = "<group>"; };
+		6B103C3915D2B7E300B74DA4 /* PVOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVOptionsViewController.h; sourceTree = "<group>"; };
+		6B103C3A15D2B7E300B74DA4 /* PVOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVOptionsViewController.m; sourceTree = "<group>"; };
+		6B103C3B15D2B7E300B74DA4 /* PVOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVOptionsViewController.xib; sourceTree = "<group>"; };
+		6B1658F815CFF5C600A91A80 /* PVSiteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSiteListViewController.h; sourceTree = "<group>"; };
+		6B1658F915CFF5C600A91A80 /* PVSiteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSiteListViewController.m; sourceTree = "<group>"; };
+		6B1658FA15CFF5C600A91A80 /* PVSiteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVSiteListViewController.xib; sourceTree = "<group>"; };
+		6B16591D15D0115100A91A80 /* DDAlertPrompt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDAlertPrompt.h; sourceTree = "<group>"; };
+		6B16591E15D0115100A91A80 /* DDAlertPrompt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAlertPrompt.m; sourceTree = "<group>"; };
+		6B29A69215D0375300AD72D0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		6B29A6B715D05CAC00AD72D0 /* PVDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVDataManager.h; sourceTree = "<group>"; };
+		6B29A6B815D05CAC00AD72D0 /* PVDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVDataManager.m; sourceTree = "<group>"; };
+		6B2F1CC6162DD38C0027463A /* PVLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVLocationViewController.h; sourceTree = "<group>"; };
+		6B2F1CC7162DD38C0027463A /* PVLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVLocationViewController.m; sourceTree = "<group>"; };
+		6B2F1CC8162DD38C0027463A /* PVLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVLocationViewController.xib; sourceTree = "<group>"; };
+		6B37704515D2D46D00511889 /* PVSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSelectionViewController.h; sourceTree = "<group>"; };
+		6B37704615D2D46D00511889 /* PVSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSelectionViewController.m; sourceTree = "<group>"; };
+		6B37704715D2D46D00511889 /* PVSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVSelectionViewController.xib; sourceTree = "<group>"; };
+		6B37704B15D2E73100511889 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		6B3DCFAC15D1750300EFF49E /* PVAddSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVAddSiteViewController.h; sourceTree = "<group>"; };
+		6B3DCFAD15D1750300EFF49E /* PVAddSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVAddSiteViewController.m; sourceTree = "<group>"; };
+		6B3DCFAE15D1750300EFF49E /* PVAddSiteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVAddSiteViewController.xib; sourceTree = "<group>"; };
+		6B3DCFB415D1828800EFF49E /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		6B57644D162DCAD1002999AF /* PVSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSelectViewController.h; sourceTree = "<group>"; };
+		6B57644E162DCAD1002999AF /* PVSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSelectViewController.m; sourceTree = "<group>"; };
+		6B57644F162DCAD1002999AF /* PVSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVSelectViewController.xib; sourceTree = "<group>"; };
+		6B5A262815D3F2BE00A30A9C /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
+		6B5A262915D3F2BE00A30A9C /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
+		6B62279A162F118D00A62B05 /* PVCreateChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVCreateChatViewController.h; sourceTree = "<group>"; };
+		6B62279B162F118D00A62B05 /* PVCreateChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVCreateChatViewController.m; sourceTree = "<group>"; };
+		6B62279C162F118D00A62B05 /* PVCreateChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVCreateChatViewController.xib; sourceTree = "<group>"; };
 		6B6828FD15CC182900092C98 /* Password Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Vault.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B68290115CC182900092C98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6B68290315CC182900092C98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B68290515CC182900092C98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6B68290915CC182900092C98 /* Password Vault-Info.plist */ = {isa = PBXFileReference; path = "Password Vault-Info.plist"; sourceTree = "<group>"; };
+		6B68290915CC182900092C98 /* Password Vault-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Password Vault-Info.plist"; sourceTree = "<group>"; };
 		6B68290B15CC182900092C98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6B68290D15CC182900092C98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6B68290F15CC182900092C98 /* Password Vault-Prefix.pch */ = {isa = PBXFileReference; path = "Password Vault-Prefix.pch"; sourceTree = "<group>"; };
-		6B68291015CC182900092C98 /* PVAppDelegate.h */ = {isa = PBXFileReference; path = PVAppDelegate.h; sourceTree = "<group>"; };
+		6B68290F15CC182900092C98 /* Password Vault-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Password Vault-Prefix.pch"; sourceTree = "<group>"; };
+		6B68291015CC182900092C98 /* PVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVAppDelegate.h; sourceTree = "<group>"; };
 		6B68291115CC182900092C98 /* PVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVAppDelegate.m; sourceTree = "<group>"; };
-		6B68291315CC182900092C98 /* PVViewController.h */ = {isa = PBXFileReference; path = PVViewController.h; sourceTree = "<group>"; };
+		6B68291315CC182900092C98 /* PVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVViewController.h; sourceTree = "<group>"; };
 		6B68291415CC182900092C98 /* PVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVViewController.m; sourceTree = "<group>"; };
 		6B68291715CC182900092C98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PVViewController_iPhone.xib; sourceTree = "<group>"; };
 		6B68291A15CC182900092C98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PVViewController_iPad.xib; sourceTree = "<group>"; };
+		6BA39A8515CC264800E56915 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		6BD20D7515D296A80023C625 /* PVSiteDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSiteDetailsViewController.h; sourceTree = "<group>"; };
+		6BD20D7615D296A80023C625 /* PVSiteDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSiteDetailsViewController.m; sourceTree = "<group>"; };
+		6BD20D7715D296A80023C625 /* PVSiteDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVSiteDetailsViewController.xib; sourceTree = "<group>"; };
+		6BF386471624A07100543A86 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +133,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074D20411630926E004C732F /* CoreLocation.framework in Frameworks */,
+				6B37704C15D2E73100511889 /* AddressBook.framework in Frameworks */,
+				6B29A69315D0375300AD72D0 /* libsqlite3.dylib in Frameworks */,
+				6BA39A8615CC264800E56915 /* libsqlite3.0.dylib in Frameworks */,
 				6B68290215CC182900092C98 /* UIKit.framework in Frameworks */,
 				6B68290415CC182900092C98 /* Foundation.framework in Frameworks */,
 				6B68290615CC182900092C98 /* CoreGraphics.framework in Frameworks */,
@@ -49,9 +146,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B16591C15D0113400A91A80 /* DDAlertPrompt */ = {
+			isa = PBXGroup;
+			children = (
+				6B16591D15D0115100A91A80 /* DDAlertPrompt.h */,
+				6B16591E15D0115100A91A80 /* DDAlertPrompt.m */,
+			);
+			name = DDAlertPrompt;
+			sourceTree = "<group>";
+		};
 		6B6828F215CC182900092C98 = {
 			isa = PBXGroup;
 			children = (
+				074D20401630926E004C732F /* CoreLocation.framework */,
+				6BF386471624A07100543A86 /* Default-568h@2x.png */,
+				6B37704B15D2E73100511889 /* AddressBook.framework */,
+				6B29A69215D0375300AD72D0 /* libsqlite3.dylib */,
+				6BA9FB6715D016A5008CD135 /* FMDB */,
+				6B16591C15D0113400A91A80 /* DDAlertPrompt */,
+				6BA39A8515CC264800E56915 /* libsqlite3.0.dylib */,
 				6B68290715CC182900092C98 /* Password Vault */,
 				6B68290015CC182900092C98 /* Frameworks */,
 				6B6828FE15CC182900092C98 /* Products */,
@@ -79,12 +192,47 @@
 		6B68290715CC182900092C98 /* Password Vault */ = {
 			isa = PBXGroup;
 			children = (
+				6B37704515D2D46D00511889 /* PVSelectionViewController.h */,
+				6B37704615D2D46D00511889 /* PVSelectionViewController.m */,
+				6B37704715D2D46D00511889 /* PVSelectionViewController.xib */,
+				6B103C3915D2B7E300B74DA4 /* PVOptionsViewController.h */,
+				6B103C3A15D2B7E300B74DA4 /* PVOptionsViewController.m */,
+				6B103C3B15D2B7E300B74DA4 /* PVOptionsViewController.xib */,
+				6B57644D162DCAD1002999AF /* PVSelectViewController.h */,
+				6B57644E162DCAD1002999AF /* PVSelectViewController.m */,
+				6B57644F162DCAD1002999AF /* PVSelectViewController.xib */,
+				6BD20D7515D296A80023C625 /* PVSiteDetailsViewController.h */,
+				6BD20D7615D296A80023C625 /* PVSiteDetailsViewController.m */,
+				6BD20D7715D296A80023C625 /* PVSiteDetailsViewController.xib */,
+				6B3DCFAC15D1750300EFF49E /* PVAddSiteViewController.h */,
+				6B3DCFAD15D1750300EFF49E /* PVAddSiteViewController.m */,
+				6B3DCFAE15D1750300EFF49E /* PVAddSiteViewController.xib */,
+				6B29A6B715D05CAC00AD72D0 /* PVDataManager.h */,
+				6B29A6B815D05CAC00AD72D0 /* PVDataManager.m */,
 				6B68291015CC182900092C98 /* PVAppDelegate.h */,
 				6B68291115CC182900092C98 /* PVAppDelegate.m */,
 				6B68291315CC182900092C98 /* PVViewController.h */,
 				6B68291415CC182900092C98 /* PVViewController.m */,
 				6B68291615CC182900092C98 /* PVViewController_iPhone.xib */,
 				6B68291915CC182900092C98 /* PVViewController_iPad.xib */,
+				6B1658F815CFF5C600A91A80 /* PVSiteListViewController.h */,
+				6B1658F915CFF5C600A91A80 /* PVSiteListViewController.m */,
+				6B1658FA15CFF5C600A91A80 /* PVSiteListViewController.xib */,
+				6B2F1CC6162DD38C0027463A /* PVLocationViewController.h */,
+				6B2F1CC7162DD38C0027463A /* PVLocationViewController.m */,
+				6B2F1CC8162DD38C0027463A /* PVLocationViewController.xib */,
+				074D203616305FA9004C732F /* PVCell.h */,
+				074D203716305FA9004C732F /* PVCell.m */,
+				074D203A16305FBA004C732F /* PVCell.xib */,
+				6B62279A162F118D00A62B05 /* PVCreateChatViewController.h */,
+				6B62279B162F118D00A62B05 /* PVCreateChatViewController.m */,
+				6B62279C162F118D00A62B05 /* PVCreateChatViewController.xib */,
+				07562F30162F9DBD0045A0CB /* PVConversationListViewController.h */,
+				07562F31162F9DBD0045A0CB /* PVConversationListViewController.m */,
+				07562F32162F9DBD0045A0CB /* PVConversationListViewController.xib */,
+				07CDE3DF163629FA009422CA /* PVConversationViewController.h */,
+				07CDE3E0163629FA009422CA /* PVConversationViewController.m */,
+				07CDE3E1163629FA009422CA /* PVConversationViewController.xib */,
 				6B68290815CC182900092C98 /* Supporting Files */,
 			);
 			path = "Password Vault";
@@ -93,12 +241,33 @@
 		6B68290815CC182900092C98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07562F2F162F988B0045A0CB /* password.db */,
+				6B5A262815D3F2BE00A30A9C /* blueButton.png */,
+				6B5A262915D3F2BE00A30A9C /* whiteButton.png */,
 				6B68290915CC182900092C98 /* Password Vault-Info.plist */,
 				6B68290A15CC182900092C98 /* InfoPlist.strings */,
 				6B68290D15CC182900092C98 /* main.m */,
 				6B68290F15CC182900092C98 /* Password Vault-Prefix.pch */,
+				6B3DCFB415D1828800EFF49E /* keys.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6BA9FB6715D016A5008CD135 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				07562F36162FA7C60045A0CB /* FMDatabase.h */,
+				07562F37162FA7C60045A0CB /* FMDatabase.m */,
+				07562F38162FA7C60045A0CB /* FMDatabaseAdditions.h */,
+				07562F39162FA7C60045A0CB /* FMDatabaseAdditions.m */,
+				07562F3A162FA7C60045A0CB /* FMDatabasePool.h */,
+				07562F3B162FA7C60045A0CB /* FMDatabasePool.m */,
+				07562F3C162FA7C60045A0CB /* FMDatabaseQueue.h */,
+				07562F3D162FA7C60045A0CB /* FMDatabaseQueue.m */,
+				07562F3E162FA7C60045A0CB /* FMResultSet.h */,
+				07562F3F162FA7C60045A0CB /* FMResultSet.m */,
+			);
+			name = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +321,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07562F35162FA05C0045A0CB /* password.db in Resources */,
 				6B68290C15CC182900092C98 /* InfoPlist.strings in Resources */,
 				6B68291815CC182900092C98 /* PVViewController_iPhone.xib in Resources */,
 				6B68291B15CC182900092C98 /* PVViewController_iPad.xib in Resources */,
+				6B1658FC15CFF5C600A91A80 /* PVSiteListViewController.xib in Resources */,
+				6B3DCFB015D1750300EFF49E /* PVAddSiteViewController.xib in Resources */,
+				6B3DCFB515D1828800EFF49E /* keys.plist in Resources */,
+				6BD20D7915D296A80023C625 /* PVSiteDetailsViewController.xib in Resources */,
+				6B103C3D15D2B7E300B74DA4 /* PVOptionsViewController.xib in Resources */,
+				6B37704915D2D46D00511889 /* PVSelectionViewController.xib in Resources */,
+				6B5A262A15D3F2BE00A30A9C /* blueButton.png in Resources */,
+				6B5A262B15D3F2BE00A30A9C /* whiteButton.png in Resources */,
+				6BF386481624A07100543A86 /* Default-568h@2x.png in Resources */,
+				6B576451162DCAD1002999AF /* PVSelectViewController.xib in Resources */,
+				6B2F1CCA162DD38C0027463A /* PVLocationViewController.xib in Resources */,
+				6B62279E162F118D00A62B05 /* PVCreateChatViewController.xib in Resources */,
+				07562F34162F9DBD0045A0CB /* PVConversationListViewController.xib in Resources */,
+				074D203B16305FBB004C732F /* PVCell.xib in Resources */,
+				07CDE3E3163629FA009422CA /* PVConversationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +350,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B68290E15CC182900092C98 /* main.m in Sources */,
+				07562F40162FA8FE0045A0CB /* FMDatabase.m in Sources */,
+				07562F41162FA8FE0045A0CB /* FMDatabaseAdditions.m in Sources */,
+				07562F42162FA8FE0045A0CB /* FMDatabaseQueue.m in Sources */,
+				07562F43162FA8FE0045A0CB /* FMResultSet.m in Sources */,
+				6B29A6AF15D0500D00AD72D0 /* main.m in Sources */,
+				6BA9FB6115D012ED008CD135 /* DDAlertPrompt.m in Sources */,
 				6B68291215CC182900092C98 /* PVAppDelegate.m in Sources */,
 				6B68291515CC182900092C98 /* PVViewController.m in Sources */,
+				6B1658FB15CFF5C600A91A80 /* PVSiteListViewController.m in Sources */,
+				6B29A6B915D05CAC00AD72D0 /* PVDataManager.m in Sources */,
+				6B3DCFAF15D1750300EFF49E /* PVAddSiteViewController.m in Sources */,
+				6BD20D7815D296A80023C625 /* PVSiteDetailsViewController.m in Sources */,
+				6B103C3C15D2B7E300B74DA4 /* PVOptionsViewController.m in Sources */,
+				6B37704815D2D46D00511889 /* PVSelectionViewController.m in Sources */,
+				6B576450162DCAD1002999AF /* PVSelectViewController.m in Sources */,
+				6B2F1CC9162DD38C0027463A /* PVLocationViewController.m in Sources */,
+				6B62279D162F118D00A62B05 /* PVCreateChatViewController.m in Sources */,
+				07562F33162F9DBD0045A0CB /* PVConversationListViewController.m in Sources */,
+				074D203816305FA9004C732F /* PVCell.m in Sources */,
+				07CDE3E2163629FA009422CA /* PVConversationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +435,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -242,6 +444,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -254,6 +457,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Vault/Password Vault-Prefix.pch";
 				INFOPLIST_FILE = "Password Vault/Password Vault-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -265,6 +469,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Vault/Password Vault-Prefix.pch";
 				INFOPLIST_FILE = "Password Vault/Password Vault-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -289,6 +494,7 @@
 				6B68292015CC182900092C98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
