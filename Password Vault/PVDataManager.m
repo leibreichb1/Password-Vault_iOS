@@ -171,7 +171,7 @@
 	return user;
 }
 
--(void)addMessage:(NSString *)sender recipient:(NSString *)receipient otherMember:(NSString *)other message:(NSString *)message time:(NSString *)time{
+-(void)addMessageSender:(NSString *)sender recipient:(NSString *)receipient otherMember:(NSString *)other message:(NSString *)message time:(NSString *)time{
     NSString *command = [[NSString alloc] initWithFormat:@"INSERT INTO conversations(sender, recipient, other_member, message, timestamp) VALUES ('%@', '%@', '%@', '%@', '%@')", sender, receipient, other, message, time];
     NSLog(@"%@", command);
     FMDatabase *db = [[FMDatabase alloc] initWithPath:[self databasePath]];

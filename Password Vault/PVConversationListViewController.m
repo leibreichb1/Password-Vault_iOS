@@ -156,7 +156,7 @@
         NSString *mess = [dict objectForKey:@"message"];
         NSString *time = [dict objectForKey:@"timestamp"];
         
-        [pvm addMessage:sender recipient:reci otherMember:other message:mess time:time];
+        [pvm addMessageSender:sender recipient:reci otherMember:other message:mess time:time];
     }
     
     [self loadConvos];

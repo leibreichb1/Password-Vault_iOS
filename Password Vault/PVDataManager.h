@@ -20,7 +20,7 @@
 -(void)createChatUser:(NSString *)username;
 -(BOOL)chatUserExist;
 -(NSString *)getChatUser;
--(void)addMessage:(NSString *)sender recipient:(NSString *)receipient otherMember:(NSString *)other message:(NSString *)message time:(NSString *)time;
+-(void)addMessageSender:(NSString *)sender recipient:(NSString *)receipient otherMember:(NSString *)other message:(NSString *)message time:(NSString *)time;
 -(NSMutableArray *)getConvoList;
 -(NSMutableArray *)getConversation:(NSString *)other;
 @end
