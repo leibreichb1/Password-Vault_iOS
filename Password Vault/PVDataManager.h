@@ -23,4 +23,5 @@
 -(void)addMessageSender:(NSString *)sender recipient:(NSString *)receipient otherMember:(NSString *)other message:(NSString *)message time:(NSString *)time;
 -(NSMutableArray *)getConvoList;
 -(NSMutableArray *)getConversation:(NSString *)other;
+-(void)deleteConvo:(NSString *)otherUser;
 @end

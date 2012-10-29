@@ -15,6 +15,7 @@
     NSString *message;
     NSString *timeStr;
     BOOL sending;
+    long height;
 }
 @end
 
@@ -46,8 +47,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     sending = NO;
+    height = 10;
     if(convo != nil){
         [titleChat setText:[[NSString alloc] initWithFormat:@"Chat with: %@", convo]];
+        [self loadConversation];
     }
     else{
         [self postForUsers];
@@ -133,6 +136,24 @@
             else
                 reci = convo;
             [pvm addMessageSender:user recipient:reci otherMember:reci message:message time:timeStr];
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, height, 300.0f, 460.0f)];
+            [label setText:message];
+            label.lineBreakMode = UILineBreakModeWordWrap;
+            label.numberOfLines = 0;
+            
+            [label sizeToFit];
+            
+            int offset = 310.0f - label.frame.size.width;
+            UILabel *addLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset, height, label.frame.size.width, label.frame.size.height)];
+            [addLabel setText:[label text]];
+            
+            height += addLabel.frame.size.height + 10.0f;
+            
+            [scrollView addSubview:addLabel];
+            
+            CGSize size = CGSizeMake(320.0f, height);
+            [scrollView setContentSize:size];
         }
     }
     else{
@@ -157,6 +178,43 @@
         [selectBtn setHidden:YES];
         [messageBox setHidden:NO];
         [sendBtn setHidden:NO];
+    }
+}
+
+-(void)loadConversation{
+    PVDataManager *pvm = [PVDataManager sharedDataManager];
+    NSMutableArray *chat = [pvm getConversation:convo];
+    for(NSDictionary *dict in chat){
+        BOOL right = NO;
+        int offset = 10;
+        UILabel *label;
+        if([convo isEqualToString:[dict objectForKey:@"sender"]]){
+            label = [[UILabel alloc] initWithFrame:CGRectMake(25.0f, height, 300.0f, 460.0f)];
+            [label setText:[dict valueForKey:@"message"]];
+            label.lineBreakMode = UILineBreakModeWordWrap;
+            label.numberOfLines = 0;
+        }
+        else{
+            right = YES;
+            label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, height, 300.0f, 460.0f)];
+            [label setText:[dict valueForKey:@"message"]];
+            label.lineBreakMode = UILineBreakModeWordWrap;
+            label.numberOfLines = 0;
+        }
+        // resize label
+        [label sizeToFit];
+        
+        if(right)
+            offset = 310.0f - label.frame.size.width;
+        UILabel *addLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset, height, label.frame.size.width, label.frame.size.height)];
+        [addLabel setText:[label text]];
+        
+        height += addLabel.frame.size.height + 10.0f;
+        
+        CGSize size = CGSizeMake(320.0f, height);
+        [scrollView setContentSize:size];
+        
+        [scrollView addSubview:addLabel];
     }
 }
 
