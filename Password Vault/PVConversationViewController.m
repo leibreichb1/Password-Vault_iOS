@@ -14,7 +14,6 @@
     NSString *convo;
     NSString *message;
     NSString *timeStr;
-    UIProgressView *progress;
     UIActivityIndicatorView *spinner;
     BOOL sending;
     long height;
