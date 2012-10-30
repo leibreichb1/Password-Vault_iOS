@@ -14,6 +14,8 @@
     NSString *convo;
     NSString *message;
     NSString *timeStr;
+    UIProgressView *progress;
+    UIActivityIndicatorView *spinner;
     BOOL sending;
     long height;
 }
@@ -46,6 +48,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [spinner setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2)];
+    [self.view addSubview:spinner];
     sending = NO;
     height = 10;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
@@ -93,6 +99,7 @@
     [request setHTTPMethod:@"GET"];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if(conn){
+        [spinner startAnimating];
     }
     else{
         //alert user connection failed
@@ -120,6 +127,7 @@
         NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         if(conn){
             sending = YES;
+            [spinner startAnimating];
         }
         else{
             //alert user connection failed
@@ -165,6 +173,7 @@
         users = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&e];
         [picker reloadAllComponents];
     }
+    [spinner stopAnimating];
 }
 
 -(IBAction)removeKeyboard:(id)sender{
