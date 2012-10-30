@@ -12,6 +12,7 @@
 #import "PVCreateChatViewController.h"
 #import "PVDataManager.h"
 #import "PVConversationListViewController.h"
+#import "PVMapViewController.h"
 
 @interface PVSelectViewController ()
 
@@ -84,5 +85,7 @@
 }
 
 - (IBAction)viewMapClicked:(id)sender {
+    PVMapViewController *nextView = [[PVMapViewController alloc] init];
+    [self.navigationController pushViewController:nextView animated:YES];
 }
 @end

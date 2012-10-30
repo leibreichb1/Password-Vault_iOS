@@ -48,6 +48,10 @@
     // Do any additional setup after loading the view from its nib.
     sending = NO;
     height = 10;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    tapGesture.cancelsTouchesInView = NO;
+    [scrollView addGestureRecognizer:tapGesture];
+    
     if(convo != nil){
         [titleChat setText:[[NSString alloc] initWithFormat:@"Chat with: %@", convo]];
         [self loadConversation];
@@ -189,33 +193,42 @@
         int offset = 10;
         UILabel *label;
         if([convo isEqualToString:[dict objectForKey:@"sender"]]){
-            label = [[UILabel alloc] initWithFrame:CGRectMake(25.0f, height, 300.0f, 460.0f)];
+            label = [[UILabel alloc] initWithFrame:CGRectMake(25.0f, height, 275.0f, 460.0f)];
+            [label setBackgroundColor:[[UIColor alloc] initWithRed:0.0f green:153.0f blue:255.0f alpha:255.0f]];
             [label setText:[dict valueForKey:@"message"]];
             label.lineBreakMode = UILineBreakModeWordWrap;
             label.numberOfLines = 0;
         }
         else{
             right = YES;
-            label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, height, 300.0f, 460.0f)];
+            label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, height, 275.0f, 460.0f)];
+            [label setBackgroundColor:[[UIColor alloc] initWithRed:204.0f green:204.0f blue:204.0f alpha:255.0f]];
             [label setText:[dict valueForKey:@"message"]];
-            label.lineBreakMode = UILineBreakModeWordWrap;
             label.numberOfLines = 0;
         }
         // resize label
         [label sizeToFit];
-        
         if(right)
             offset = 310.0f - label.frame.size.width;
         UILabel *addLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset, height, label.frame.size.width, label.frame.size.height)];
+        [addLabel setBackgroundColor:[label backgroundColor]];
+        addLabel.lineBreakMode = UILineBreakModeWordWrap;
+        addLabel.numberOfLines = 0;
         [addLabel setText:[label text]];
         
         height += addLabel.frame.size.height + 10.0f;
         
         CGSize size = CGSizeMake(320.0f, height);
         [scrollView setContentSize:size];
-        
         [scrollView addSubview:addLabel];
     }
+    CGPoint bottomOffset = CGPointMake(0, scrollView.contentSize.height - scrollView.frame.size.height + scrollView.contentInset.bottom);
+    if (bottomOffset.y > 0)
+        [scrollView setContentOffset: bottomOffset animated: YES];
+}
+
+-(void)hideKeyboard{
+    [messageBox resignFirstResponder];
 }
 
 #pragma PickerView Delegate Methods

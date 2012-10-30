@@ -239,4 +239,28 @@
     [db close];
 }
 
+-(int)getLastPost{
+    int time = 0;
+    NSString *command = [[NSString alloc] initWithFormat:@"SELECT * FROM time_interval"];
+    FMDatabase *db = [[FMDatabase alloc] initWithPath:[self databasePath]];
+    [db open];
+    FMResultSet *results = [db executeQuery:command];
+    if([results next]){
+        time = [results intForColumn:@"last_time"];
+    }
+    [results close];
+    [db close];
+    return time;
+}
+
+-(void)setLastPost:(int)timer{
+    NSString *command = [[NSString alloc] initWithFormat:@"DELETE FROM time_interval"];
+    NSString *inCom = [[NSString alloc] initWithFormat:@"INSERT INTO time_interval(last_time) VALUES ('%d')", timer];
+    FMDatabase *db = [[FMDatabase alloc] initWithPath:[self databasePath]];
+    [db open];
+    NSLog(@"DELETE: %d", [db executeUpdate:command]);
+    NSLog(@"INSERT: %d", [db executeUpdate:inCom]);
+    [db close];
+}
+
 @end

@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073A1C0616401C5500D5AF5C /* PVMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A1C0416401C5500D5AF5C /* PVMapViewController.m */; };
+		073A1C0716401C5500D5AF5C /* PVMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073A1C0516401C5500D5AF5C /* PVMapViewController.xib */; };
+		073A1C0A16401CB400D5AF5C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073A1C0916401CB400D5AF5C /* MapKit.framework */; };
+		073A1C111640611D00D5AF5C /* password.db in Resources */ = {isa = PBXBuildFile; fileRef = 073A1C101640600900D5AF5C /* password.db */; };
 		074D203816305FA9004C732F /* PVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D203716305FA9004C732F /* PVCell.m */; };
 		074D203B16305FBB004C732F /* PVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074D203A16305FBA004C732F /* PVCell.xib */; };
 		074D20411630926E004C732F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074D20401630926E004C732F /* CoreLocation.framework */; };
 		07562F33162F9DBD0045A0CB /* PVConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F31162F9DBD0045A0CB /* PVConversationListViewController.m */; };
 		07562F34162F9DBD0045A0CB /* PVConversationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07562F32162F9DBD0045A0CB /* PVConversationListViewController.xib */; };
-		07562F35162FA05C0045A0CB /* password.db in Resources */ = {isa = PBXBuildFile; fileRef = 07562F2F162F988B0045A0CB /* password.db */; };
 		07562F40162FA8FE0045A0CB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F37162FA7C60045A0CB /* FMDatabase.m */; };
 		07562F41162FA8FE0045A0CB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F39162FA7C60045A0CB /* FMDatabaseAdditions.m */; };
 		07562F42162FA8FE0045A0CB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F3D162FA7C60045A0CB /* FMDatabaseQueue.m */; };
@@ -56,11 +59,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		073A1C0316401C5500D5AF5C /* PVMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVMapViewController.h; sourceTree = "<group>"; };
+		073A1C0416401C5500D5AF5C /* PVMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVMapViewController.m; sourceTree = "<group>"; };
+		073A1C0516401C5500D5AF5C /* PVMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVMapViewController.xib; sourceTree = "<group>"; };
+		073A1C0916401CB400D5AF5C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		073A1C101640600900D5AF5C /* password.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = password.db; sourceTree = "<group>"; };
 		074D203616305FA9004C732F /* PVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVCell.h; sourceTree = "<group>"; };
 		074D203716305FA9004C732F /* PVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVCell.m; sourceTree = "<group>"; };
 		074D203A16305FBA004C732F /* PVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVCell.xib; sourceTree = "<group>"; };
 		074D20401630926E004C732F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		07562F2F162F988B0045A0CB /* password.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = password.db; sourceTree = "<group>"; };
 		07562F30162F9DBD0045A0CB /* PVConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVConversationListViewController.h; sourceTree = "<group>"; };
 		07562F31162F9DBD0045A0CB /* PVConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVConversationListViewController.m; sourceTree = "<group>"; };
 		07562F32162F9DBD0045A0CB /* PVConversationListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVConversationListViewController.xib; sourceTree = "<group>"; };
@@ -133,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073A1C0A16401CB400D5AF5C /* MapKit.framework in Frameworks */,
 				074D20411630926E004C732F /* CoreLocation.framework in Frameworks */,
 				6B37704C15D2E73100511889 /* AddressBook.framework in Frameworks */,
 				6B29A69315D0375300AD72D0 /* libsqlite3.dylib in Frameworks */,
@@ -158,6 +166,7 @@
 		6B6828F215CC182900092C98 = {
 			isa = PBXGroup;
 			children = (
+				073A1C0916401CB400D5AF5C /* MapKit.framework */,
 				074D20401630926E004C732F /* CoreLocation.framework */,
 				6BF386471624A07100543A86 /* Default-568h@2x.png */,
 				6B37704B15D2E73100511889 /* AddressBook.framework */,
@@ -233,6 +242,9 @@
 				07CDE3DF163629FA009422CA /* PVConversationViewController.h */,
 				07CDE3E0163629FA009422CA /* PVConversationViewController.m */,
 				07CDE3E1163629FA009422CA /* PVConversationViewController.xib */,
+				073A1C0316401C5500D5AF5C /* PVMapViewController.h */,
+				073A1C0416401C5500D5AF5C /* PVMapViewController.m */,
+				073A1C0516401C5500D5AF5C /* PVMapViewController.xib */,
 				6B68290815CC182900092C98 /* Supporting Files */,
 			);
 			path = "Password Vault";
@@ -241,7 +253,7 @@
 		6B68290815CC182900092C98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07562F2F162F988B0045A0CB /* password.db */,
+				073A1C101640600900D5AF5C /* password.db */,
 				6B5A262815D3F2BE00A30A9C /* blueButton.png */,
 				6B5A262915D3F2BE00A30A9C /* whiteButton.png */,
 				6B68290915CC182900092C98 /* Password Vault-Info.plist */,
@@ -321,7 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07562F35162FA05C0045A0CB /* password.db in Resources */,
+				073A1C111640611D00D5AF5C /* password.db in Resources */,
 				6B68290C15CC182900092C98 /* InfoPlist.strings in Resources */,
 				6B68291815CC182900092C98 /* PVViewController_iPhone.xib in Resources */,
 				6B68291B15CC182900092C98 /* PVViewController_iPad.xib in Resources */,
@@ -340,6 +352,7 @@
 				07562F34162F9DBD0045A0CB /* PVConversationListViewController.xib in Resources */,
 				074D203B16305FBB004C732F /* PVCell.xib in Resources */,
 				07CDE3E3163629FA009422CA /* PVConversationViewController.xib in Resources */,
+				073A1C0716401C5500D5AF5C /* PVMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +383,7 @@
 				07562F33162F9DBD0045A0CB /* PVConversationListViewController.m in Sources */,
 				074D203816305FA9004C732F /* PVCell.m in Sources */,
 				07CDE3E2163629FA009422CA /* PVConversationViewController.m in Sources */,
+				073A1C0616401C5500D5AF5C /* PVMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

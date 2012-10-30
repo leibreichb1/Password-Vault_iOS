@@ -24,4 +24,6 @@
 -(NSMutableArray *)getConvoList;
 -(NSMutableArray *)getConversation:(NSString *)other;
 -(void)deleteConvo:(NSString *)otherUser;
+-(int)getLastPost;
+-(void)setLastPost:(int)time;
 @end
