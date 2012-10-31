@@ -11,10 +11,11 @@
 @interface PVSiteDetailsViewController ()
 {
 	BOOL showingPWInfo;
+    NSString *urlAddress;
+    NSString *username;
+    NSString *password;
 }
-@property (strong, nonatomic) NSString *urlAddress;
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *password;
+
 @end
 
 @implementation PVSiteDetailsViewController
@@ -22,17 +23,14 @@
 @synthesize userTextLabel;
 @synthesize passTextLabel;
 @synthesize siteWebView;
-@synthesize urlAddress;
-@synthesize username;
-@synthesize password;
 
 - (id)initWithUrl:(NSString *)url username:(NSString *)user password:(NSString *)pass
 {
     self = [super initWithNibName:@"PVSiteDetailsViewController" bundle:nil];
     if (self) {
-		self.urlAddress = url;
-		self.username = user;
-		self.password = pass;
+		urlAddress = url;
+		username = user;
+		password = pass;
 		showingPWInfo = YES;
     }
     return self;
@@ -41,10 +39,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [urlTextLabel setText:self.urlAddress];
-	[userTextLabel setText:self.username];
-	[passTextLabel setText:self.password];
-	NSURL *url = [NSURL URLWithString:self.urlAddress];
+    [urlTextLabel setText:urlAddress];
+	[userTextLabel setText:username];
+	[passTextLabel setText:password];
+	NSURL *url = [NSURL URLWithString:urlAddress];
 	NSURLRequest *requestUrl = [NSURLRequest requestWithURL:url];
 	[siteWebView loadRequest:requestUrl];
 	

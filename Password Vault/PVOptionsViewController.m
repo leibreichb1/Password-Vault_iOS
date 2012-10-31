@@ -121,6 +121,10 @@
 		PVSelectionViewController *nextView = [[PVSelectionViewController alloc] init];
 		[self.navigationController pushViewController:nextView animated:YES];
 	}
+    else if([[selectionsArray objectAtIndex:indexPath.row] isEqualToString:@"tracking"]){
+        PVTrackMapViewController *nextView = [[PVTrackMapViewController alloc] init];
+        [self.navigationController pushViewController:nextView animated:YES];
+    }
 	else if([[selectionsArray objectAtIndex:indexPath.row] isEqualToString:@"locations"]){
 		PVLocationViewController *nextView = [[PVLocationViewController alloc] init];
 		[self.navigationController pushViewController:nextView animated:YES];

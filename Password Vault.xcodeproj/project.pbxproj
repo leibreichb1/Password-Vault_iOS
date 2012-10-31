@@ -20,6 +20,8 @@
 		07562F41162FA8FE0045A0CB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F39162FA7C60045A0CB /* FMDatabaseAdditions.m */; };
 		07562F42162FA8FE0045A0CB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F3D162FA7C60045A0CB /* FMDatabaseQueue.m */; };
 		07562F43162FA8FE0045A0CB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F3F162FA7C60045A0CB /* FMResultSet.m */; };
+		07A4744E1641D29800FC08CD /* PVTrackMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A4744C1641D29800FC08CD /* PVTrackMapViewController.m */; };
+		07A4744F1641D29800FC08CD /* PVTrackMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A4744D1641D29800FC08CD /* PVTrackMapViewController.xib */; };
 		07CDE3E2163629FA009422CA /* PVConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CDE3E0163629FA009422CA /* PVConversationViewController.m */; };
 		07CDE3E3163629FA009422CA /* PVConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CDE3E1163629FA009422CA /* PVConversationViewController.xib */; };
 		6B103C3C15D2B7E300B74DA4 /* PVOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B103C3A15D2B7E300B74DA4 /* PVOptionsViewController.m */; };
@@ -81,6 +83,9 @@
 		07562F3D162FA7C60045A0CB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		07562F3E162FA7C60045A0CB /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		07562F3F162FA7C60045A0CB /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		07A4744B1641D29800FC08CD /* PVTrackMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVTrackMapViewController.h; sourceTree = "<group>"; };
+		07A4744C1641D29800FC08CD /* PVTrackMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVTrackMapViewController.m; sourceTree = "<group>"; };
+		07A4744D1641D29800FC08CD /* PVTrackMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVTrackMapViewController.xib; sourceTree = "<group>"; };
 		07CDE3DF163629FA009422CA /* PVConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVConversationViewController.h; sourceTree = "<group>"; };
 		07CDE3E0163629FA009422CA /* PVConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVConversationViewController.m; sourceTree = "<group>"; };
 		07CDE3E1163629FA009422CA /* PVConversationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVConversationViewController.xib; sourceTree = "<group>"; };
@@ -245,6 +250,9 @@
 				073A1C0316401C5500D5AF5C /* PVMapViewController.h */,
 				073A1C0416401C5500D5AF5C /* PVMapViewController.m */,
 				073A1C0516401C5500D5AF5C /* PVMapViewController.xib */,
+				07A4744B1641D29800FC08CD /* PVTrackMapViewController.h */,
+				07A4744C1641D29800FC08CD /* PVTrackMapViewController.m */,
+				07A4744D1641D29800FC08CD /* PVTrackMapViewController.xib */,
 				6B68290815CC182900092C98 /* Supporting Files */,
 			);
 			path = "Password Vault";
@@ -353,6 +361,7 @@
 				074D203B16305FBB004C732F /* PVCell.xib in Resources */,
 				07CDE3E3163629FA009422CA /* PVConversationViewController.xib in Resources */,
 				073A1C0716401C5500D5AF5C /* PVMapViewController.xib in Resources */,
+				07A4744F1641D29800FC08CD /* PVTrackMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +393,7 @@
 				074D203816305FA9004C732F /* PVCell.m in Sources */,
 				07CDE3E2163629FA009422CA /* PVConversationViewController.m in Sources */,
 				073A1C0616401C5500D5AF5C /* PVMapViewController.m in Sources */,
+				07A4744E1641D29800FC08CD /* PVTrackMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

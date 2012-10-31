@@ -10,6 +10,7 @@
 #import <dispatch/dispatch.h>
 #import "PVSelectionViewController.h"
 #import "PVLocationViewController.h"
+#import "PVTrackMapViewController.h"
 
 
 @interface PVOptionsViewController : UITableViewController
