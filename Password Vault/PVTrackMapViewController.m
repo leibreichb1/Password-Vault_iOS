@@ -13,21 +13,22 @@
 @interface PVTrackMapViewController ()
 {
     BOOL showingSelector;
-    NSArray *userArray;
+    NSMutableArray *userArray;
+    int height;
 }
 @end
 
 @implementation PVTrackMapViewController
+@synthesize finishBtn;
 @synthesize _mapView;
 @synthesize _selectView;
-@synthesize finishBtn;
 @synthesize myTableView;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        showingSelector = false;
+        showingSelector = NO;
     }
     return self;
 }
@@ -44,10 +45,23 @@
 {
     [super viewDidLoad];
     
+    height = _selectView.frame.size.height;
+    
     [myTableView setDelegate:self];
     [myTableView setDataSource:self];
     
-    userArray = [[NSArray alloc] initWithObjects:@"BRIAN", @"TEST", nil];
+    userArray = [[NSMutableArray alloc] init];
+    for(int i = 0; i < 20; i++){
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        [dict setObject:[[NSString alloc] initWithFormat:@"%d", i] forKey:@"User"];
+        [dict setObject:@"NO" forKey:@"Selected"];
+        [userArray addObject:dict];
+    }
+
+    CGRect selectFrame = _selectView.frame;
+    selectFrame.size.height = 0;
+    _selectView.frame = selectFrame;
+    
     CGRect btnFrame = finishBtn.frame;
     btnFrame.origin.y -= 44;
     finishBtn.frame = btnFrame;
@@ -63,34 +77,6 @@
     UIBarButtonItem *usersBtn = [[UIBarButtonItem alloc] initWithTitle:@"Users" style:UIBarButtonItemStylePlain target:self action:@selector(hideShowList)];
 	self.navigationItem.rightBarButtonItem = usersBtn;
 }
-
-- (void)hideShowList
-{
-	[UIView animateWithDuration:0.3 animations:^{
-		CGRect mapFrame = _mapView.frame;
-        CGRect selectFrame = _selectView.frame;
-        CGRect btnFrame = finishBtn.frame;
-        int height = self.view.frame.size.height - 50;
-        int y = height;
-		if(showingSelector)
-		{
-			mapFrame.origin.y -= y;
-			mapFrame.size.height += height;
-			selectFrame.size.height -= height - 50;
-            btnFrame.origin.y -= 44;
-		} else {
-			mapFrame.origin.y += y;
-			mapFrame.size.height -= height;
-			selectFrame.size.height += height - 50;
-            btnFrame.origin.y += 44;
-		}
-        showingSelector = !showingSelector;
-		_mapView.frame = mapFrame;
-        finishBtn.frame = btnFrame;
-        _selectView.frame = selectFrame;
-	}];
-}
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -128,7 +114,7 @@
 	}
     
     // Configure the cell...
-    cell.textLabel.text = [userArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[userArray objectAtIndex:indexPath.row ] valueForKey:@"User"];
     return cell;
 }
 
@@ -192,17 +178,41 @@
     
     if (thisCell.accessoryType == UITableViewCellAccessoryNone) {
         thisCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        NSMutableDictionary *dict = [userArray objectAtIndex:indexPath.row];
+        [dict setObject:@"YES" forKey:@"Selected"];
         
     }else{
     	thisCell.accessoryType = UITableViewCellAccessoryNone;
-        
+        NSMutableDictionary *dict = [userArray objectAtIndex:indexPath.row];
+        [dict setObject:@"NO" forKey:@"Selected"];
     }
 }
 
 - (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
     
-    //add your own code to set the cell accesory type.
+    if([[[userArray objectAtIndex:indexPath.row] valueForKey:@"Selected"] isEqualToString:@"YES"])
+        return UITableViewCellAccessoryCheckmark;
     return UITableViewCellAccessoryNone;
+}
+
+#pragma mark - Custom methods
+- (void)hideShowList
+{
+	[UIView animateWithDuration:0.3 animations:^{
+        CGRect selectFrame = _selectView.frame;
+        CGRect btnFrame = finishBtn.frame;
+		if(showingSelector)
+		{
+			selectFrame.size.height = 0;
+            btnFrame.origin.y -= 44;
+		} else {
+			selectFrame.size.height = height;
+            btnFrame.origin.y += 44;
+		}
+        showingSelector = !showingSelector;
+        finishBtn.frame = btnFrame;
+        _selectView.frame = selectFrame;
+	}];
 }
 
 @end

@@ -11,6 +11,7 @@
 		073A1C0716401C5500D5AF5C /* PVMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073A1C0516401C5500D5AF5C /* PVMapViewController.xib */; };
 		073A1C0A16401CB400D5AF5C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073A1C0916401CB400D5AF5C /* MapKit.framework */; };
 		073A1C111640611D00D5AF5C /* password.db in Resources */ = {isa = PBXBuildFile; fileRef = 073A1C101640600900D5AF5C /* password.db */; };
+		074C14F31641FDDA001056DB /* PVTrackMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A4744C1641D29800FC08CD /* PVTrackMapViewController.m */; };
 		074D203816305FA9004C732F /* PVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D203716305FA9004C732F /* PVCell.m */; };
 		074D203B16305FBB004C732F /* PVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074D203A16305FBA004C732F /* PVCell.xib */; };
 		074D20411630926E004C732F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074D20401630926E004C732F /* CoreLocation.framework */; };
@@ -20,7 +21,6 @@
 		07562F41162FA8FE0045A0CB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F39162FA7C60045A0CB /* FMDatabaseAdditions.m */; };
 		07562F42162FA8FE0045A0CB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F3D162FA7C60045A0CB /* FMDatabaseQueue.m */; };
 		07562F43162FA8FE0045A0CB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 07562F3F162FA7C60045A0CB /* FMResultSet.m */; };
-		07A4744E1641D29800FC08CD /* PVTrackMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A4744C1641D29800FC08CD /* PVTrackMapViewController.m */; };
 		07A4744F1641D29800FC08CD /* PVTrackMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A4744D1641D29800FC08CD /* PVTrackMapViewController.xib */; };
 		07CDE3E2163629FA009422CA /* PVConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CDE3E0163629FA009422CA /* PVConversationViewController.m */; };
 		07CDE3E3163629FA009422CA /* PVConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CDE3E1163629FA009422CA /* PVConversationViewController.xib */; };
@@ -372,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074C14F31641FDDA001056DB /* PVTrackMapViewController.m in Sources */,
 				07562F40162FA8FE0045A0CB /* FMDatabase.m in Sources */,
 				07562F41162FA8FE0045A0CB /* FMDatabaseAdditions.m in Sources */,
 				07562F42162FA8FE0045A0CB /* FMDatabaseQueue.m in Sources */,
@@ -393,7 +394,6 @@
 				074D203816305FA9004C732F /* PVCell.m in Sources */,
 				07CDE3E2163629FA009422CA /* PVConversationViewController.m in Sources */,
 				073A1C0616401C5500D5AF5C /* PVMapViewController.m in Sources */,
-				07A4744E1641D29800FC08CD /* PVTrackMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
