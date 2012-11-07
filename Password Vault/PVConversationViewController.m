@@ -10,6 +10,7 @@
 #import "PVDataManager.h"
 
 @interface PVConversationViewController (){
+    CGPoint originalCenter;
     NSArray *users;
     NSString *convo;
     NSString *message;
@@ -48,6 +49,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    originalCenter = self.view.center;
     spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [spinner setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2)];
     [self.view addSubview:spinner];
@@ -256,6 +258,17 @@
 
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
+}
+
+#pragma TextField Delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.view.center = CGPointMake(originalCenter.x, textField.center.y/-60);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.center = originalCenter;
 }
 
 @end

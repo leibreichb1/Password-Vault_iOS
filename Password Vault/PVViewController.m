@@ -11,7 +11,9 @@
 #import "DDAlertPrompt.h"
 #import "PVSelectViewController.h"
 
-@interface PVViewController ()
+@interface PVViewController (){
+    CGPoint originalCenter;
+}
 
 @end
 
@@ -26,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    originalCenter = self.view.center;
 	self.navigationItem.title = @"Login";
 	pvm = [PVDataManager sharedDataManager];
 	BOOL result = [pvm doPasswordsExist];
@@ -116,5 +119,16 @@
 			}
 		}
 	}
+}
+
+#pragma TextField Delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.view.center = CGPointMake(originalCenter.x, textField.center.y-60);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.center = originalCenter;
 }
 @end

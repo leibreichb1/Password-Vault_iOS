@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PVConversationViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDelegate>
+@interface PVConversationViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;

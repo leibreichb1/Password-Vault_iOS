@@ -9,7 +9,9 @@
 #import "PVAddSiteViewController.h"
 #import "PVOptionsViewController.h"
 
-@interface PVAddSiteViewController ()
+@interface PVAddSiteViewController (){
+    CGPoint originalCenter;
+}
 @property (strong, nonatomic) NSString *keyFile;
 @property (strong, nonatomic) NSMutableDictionary *usedKeys;
 
@@ -37,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    originalCenter = self.view.center;
 	self.navigationItem.title = @"Add Site";
     // Do any additional setup after loading the view from its nib.
 	self.keyFile = [[NSBundle mainBundle] pathForResource:@"keys" ofType:@"plist"];
@@ -149,5 +152,17 @@
 	[urlField resignFirstResponder];
 	[usernameField resignFirstResponder];
 	[passwordField resignFirstResponder];
+}
+
+#pragma TextField Delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if(textField == usernameField || textField == passwordField)
+        self.view.center = CGPointMake(originalCenter.x, usernameField.center.y - 100);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.center = originalCenter;
 }
 @end

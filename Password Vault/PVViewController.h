@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PVDataManager.h"
 
-@interface PVViewController : UIViewController <UIAlertViewDelegate>
+@interface PVViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *passField;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *passBtn;

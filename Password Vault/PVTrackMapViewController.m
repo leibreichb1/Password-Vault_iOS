@@ -7,13 +7,20 @@
 //
 
 #import "PVTrackMapViewController.h"
+#import "PVTrackedLocation.h"
 
 #define METERS_PER_MILE 1609.344
 
 @interface PVTrackMapViewController ()
 {
     BOOL showingSelector;
+    BOOL gettingUsers;
     NSMutableArray *userArray;
+    NSMutableArray *userPoints;
+    MKMapRect _routeRect;
+    UIActivityIndicatorView *spinner;
+    NSArray *colors;
+    int color;
     int height;
 }
 @end
@@ -45,18 +52,15 @@
 {
     [super viewDidLoad];
     
+    colors = [[NSArray alloc] initWithObjects:[UIColor redColor], [UIColor blueColor], [UIColor greenColor], [UIColor yellowColor], nil];
+    color = 0;
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     height = _selectView.frame.size.height;
     
     [myTableView setDelegate:self];
     [myTableView setDataSource:self];
     
     userArray = [[NSMutableArray alloc] init];
-    for(int i = 0; i < 20; i++){
-        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-        [dict setObject:[[NSString alloc] initWithFormat:@"%d", i] forKey:@"User"];
-        [dict setObject:@"NO" forKey:@"Selected"];
-        [userArray addObject:dict];
-    }
 
     CGRect selectFrame = _selectView.frame;
     selectFrame.size.height = 0;
@@ -76,6 +80,7 @@
 
     UIBarButtonItem *usersBtn = [[UIBarButtonItem alloc] initWithTitle:@"Users" style:UIBarButtonItemStylePlain target:self action:@selector(hideShowList)];
 	self.navigationItem.rightBarButtonItem = usersBtn;
+    [self postForUsers];
 }
 
 - (void)didReceiveMemoryWarning
@@ -195,6 +200,21 @@
     return UITableViewCellAccessoryNone;
 }
 
+#pragma mark - MapView Delegate Methods
+- (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated{
+    
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
+{
+    MKPolylineView *pv = [[MKPolylineView alloc] initWithPolyline:overlay];
+    pv.fillColor = [colors objectAtIndex:color % [colors count]];
+    pv.strokeColor = [colors objectAtIndex:color % [colors count]];
+    color++;
+    pv.lineWidth = 3;
+    return pv;
+}
+
 #pragma mark - Custom methods
 - (void)hideShowList
 {
@@ -213,6 +233,149 @@
         finishBtn.frame = btnFrame;
         _selectView.frame = selectFrame;
 	}];
+}
+
+-(IBAction)getSelectedUsers:(id)sender{
+    [self hideShowList];
+    [_mapView removeOverlays:[_mapView overlays]];
+    [_mapView removeAnnotations:[_mapView annotations]];
+    NSMutableString *selectedUsers = [[NSMutableString alloc] initWithFormat:@""];
+    for(int i = 0; i < [userArray count]; i++){
+        NSMutableDictionary *dict = [userArray objectAtIndex:i];
+        if ([[dict objectForKey:@"Selected"] isEqualToString:@"YES"]) {
+            [selectedUsers appendFormat:@"%@,", [dict objectForKey:@"User"]];
+        }
+    }
+    if(![selectedUsers isEqualToString:@""]){
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://devimiiphone1.nku.edu/research_chat_client/password_vault_server/get_locations.php"]];
+        [request setHTTPMethod:@"POST"];
+        NSString *postStr = [[NSString alloc] initWithFormat:@"users=%@", [selectedUsers substringToIndex:[selectedUsers length]-1]];
+        NSLog(@"%@", postStr);
+        [request setHTTPBody:[postStr dataUsingEncoding:NSUTF8StringEncoding]];
+    
+        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        if(conn){
+            [spinner startAnimating];
+        }
+        else{
+            //alert user connection failed
+        }
+    }
+
+}
+
+-(void)postForUsers{
+    gettingUsers = YES;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://devimiiphone1.nku.edu/research_chat_client/password_vault_server/get_tracked_users.php"]];
+    [request setHTTPMethod:@"GET"];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if(conn){
+        [spinner startAnimating];
+    }
+    else{
+        //alert user connection failed
+    }
+
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    NSError *e;
+    if(gettingUsers){
+        NSArray *json = [[NSMutableArray alloc] initWithArray:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&e]];
+        gettingUsers = false;
+        userArray = [[NSMutableArray alloc] init];
+        for(int i = 0; i < [json count]; i++){
+            NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+            [dict setObject:[json objectAtIndex:i] forKey:@"User"];
+            [dict setObject:@"NO" forKey:@"Selected"];
+            [userArray addObject:dict];
+        }
+        [myTableView reloadData];
+    }
+    else{
+        userPoints = [[NSMutableArray alloc] init];
+        NSDictionary *json = [[NSDictionary alloc] initWithDictionary:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&e]];
+        for(int i = 0; i < [userArray count]; i++){
+            if([[[userArray objectAtIndex:i] objectForKey:@"Selected"] isEqualToString:@"YES"]){
+                NSMutableArray *tempArr = [[NSMutableArray alloc] init];
+                NSString *user = [[userArray objectAtIndex:i] valueForKey:@"User"];
+                NSLog(@"%@", user);
+                NSLog(@"%@", [json objectForKey:user]);
+                NSArray *dict = [[NSArray alloc] initWithArray:[json objectForKey:user]];
+                for(int j = 0; j < [dict count]; j++){
+                    double lat = [[[dict objectAtIndex:j] valueForKey:@"lat"] doubleValue];
+                    double lon = [[[dict objectAtIndex:j] valueForKey:@"lon"] doubleValue];
+                    CLGeocoder *coder = [[CLGeocoder alloc] init];
+                    CLLocation *loc = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
+                    [tempArr addObject:loc];
+                    CLLocationCoordinate2D cord;
+                    cord.latitude = lat;
+                    cord.longitude = lon;
+                    PVTrackedLocation *trackLoc = [[PVTrackedLocation alloc] initWithName:@"" address:@"" coordinate:cord];
+                    [_mapView addAnnotation:trackLoc];
+                    [coder reverseGeocodeLocation:loc completionHandler:^(NSArray *placemarks, NSError *error) {
+                        for(CLPlacemark *mark in placemarks){
+                            NSDictionary *markDict = [mark addressDictionary];
+                            NSString *str = [[NSString alloc] initWithFormat:@"%@, %@", [markDict objectForKey:@"City"], [mark postalCode]];
+                            for(PVTrackedLocation *ano in [_mapView annotations]){
+                                if([ano cord].latitude == lat && [ano cord].longitude == lon){
+                                    [ano setAddress:str];
+                                    [ano setName:user];
+                                }
+                            }
+                        }
+                    }];
+                }
+                [userPoints addObject:tempArr];
+            }
+        }
+        [self loadRoute];
+    }
+    [spinner stopAnimating];
+}
+
+-(void)loadRoute{
+    for(int i = 0; i < [userPoints count]; i++){
+        MKMapPoint northEastPoint;
+        MKMapPoint southWestPoint;
+        NSArray *locations = [userPoints objectAtIndex:i];
+        MKMapPoint* pointArr = malloc(sizeof(MKMapPoint) *[locations count]);
+        for(int idx = 0; idx < [locations count]; idx++)
+        {
+            CLLocation *tempLoc = (CLLocation*)[locations objectAtIndex:idx];
+            
+            CLLocationDegrees latitude  = tempLoc.coordinate.latitude;
+            CLLocationDegrees longitude = tempLoc.coordinate.longitude;
+            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+            
+            MKMapPoint point = MKMapPointForCoordinate(coordinate);
+            
+            // if it is the first point, just use them, since we have nothing to compare to yet.
+            if (idx == 0) {
+                northEastPoint = point;
+                southWestPoint = point;
+            }
+            else
+            {
+                if (point.x > northEastPoint.x)
+                    northEastPoint.x = point.x;
+                if(point.y > northEastPoint.y)
+                    northEastPoint.y = point.y;
+                if (point.x < southWestPoint.x)
+                    southWestPoint.x = point.x;
+                if (point.y < southWestPoint.y)
+                    southWestPoint.y = point.y;
+            }
+            pointArr[idx] = point;
+        }
+        MKPolyline *pl = [MKPolyline polylineWithPoints:pointArr count:[locations count]];
+        if (MKMapRectIsNull(_routeRect))
+            _routeRect = pl.boundingMapRect;
+        else
+            _routeRect = MKMapRectUnion(_routeRect, pl.boundingMapRect);
+        [_mapView addOverlay:pl];
+        free(pointArr);
+    }
 }
 
 @end

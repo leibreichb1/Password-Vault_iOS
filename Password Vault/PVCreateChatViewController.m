@@ -10,7 +10,9 @@
 #import "PVDataManager.h"
 #import "PVConversationListViewController.h"
 
-@interface PVCreateChatViewController ()
+@interface PVCreateChatViewController (){
+    CGPoint originalCenter;
+}
 
 @end
 
@@ -30,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    originalCenter = self.view.center;
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,4 +91,16 @@
 - (IBAction)backgroundTap:(id)sender{
 	[usernameField resignFirstResponder];
 }
+
+#pragma TextField Delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.view.center = CGPointMake(originalCenter.x, textField.center.y-60);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.center = CGPointMake(originalCenter.x, originalCenter.y-25);
+}
+
 @end

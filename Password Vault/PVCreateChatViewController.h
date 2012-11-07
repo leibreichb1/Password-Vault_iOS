@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <dispatch/dispatch.h>
 
-@interface PVCreateChatViewController : UIViewController
+@interface PVCreateChatViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UIButton *createBtn;
 @property (strong, nonatomic) NSMutableData *myData;

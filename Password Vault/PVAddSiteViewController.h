@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PVDataManager.h"
 
-@interface PVAddSiteViewController : UIViewController
+@interface PVAddSiteViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *addSiteBtn;
 @property (weak, nonatomic) IBOutlet UIButton *genPassBtn;
 @property (weak, nonatomic) IBOutlet UIButton *clearBtn;
