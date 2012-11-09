@@ -107,18 +107,24 @@
 	if ([alertView isKindOfClass:[DDAlertPrompt class]] && buttonIndex == [alertView cancelButtonIndex]) {
 		DDAlertPrompt *loginPrompt = [[DDAlertPrompt alloc] initWithTitle:@"Create Password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitle:@"Create"];	
 		[loginPrompt show];
-	} else {
+	} else if([alertView isKindOfClass:[DDAlertPrompt class]]) {
 		if ([alertView isKindOfClass:[DDAlertPrompt class]]) {
 			DDAlertPrompt *loginPrompt = (DDAlertPrompt *)alertView;
 			if([loginPrompt.plainTextField.text isEqualToString:loginPrompt.secretTextField.text]){
 				[pvm insertPassword:loginPrompt.plainTextField.text];
+                UIAlertView *isDemoAlert = [[UIAlertView alloc] initWithTitle:@"DEMO?" message:@"Is this a demo?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+                [isDemoAlert show];
 			}
 			else{
 				DDAlertPrompt *loginPrompt = [[DDAlertPrompt alloc] initWithTitle:@"Create Password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitle:@"Create"];	
 				[loginPrompt show];
 			}
 		}
-	}
+	} else{
+        if (buttonIndex != [alertView cancelButtonIndex]) {
+            [self loadDemo];
+        }
+    }
 }
 
 #pragma TextField Delegate
@@ -131,4 +137,41 @@
 {
     self.view.center = originalCenter;
 }
+
+- (void) loadDemo{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://devimiiphone1.nku.edu/research_chat_client/chat_client_server/get_next_demo.php"]];
+    
+	NSString *params = @"OS=iOS&deviceID=1234";
+	[request setHTTPMethod:@"POST"];
+	//[request setValue:@"text/plain" forHTTPHeaderField:@"Content-type"];
+	[request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+	NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	if(conn){
+        [pvm insertSite:@"http://www.google.com" withUser:@"user" withPass:@"pass"];
+        [pvm insertSite:@"http://www.nku.edu" withUser:@"student" withPass:@"password"];
+        [pvm insertSite:@"http://www.yahoo.com" withUser:@"username" withPass:@"password"];
+        [pvm insertSite:@"http://www.facebook.com" withUser:@"demouser@demo.com" withPass:@"pass22"];
+        [pvm insertSite:@"http://www.woot.com" withUser:@"wootuser" withPass:@"wootpass"];
+	}
+	else{
+        //alert user failed
+	}
+
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    // Append the new data to receivedData.
+    // receivedData is an instance variable declared elsewhere.
+	NSString *responseString  = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    if([responseString rangeOfString:@"DEMOUSER"].location != NSNotFound){
+        responseString = [responseString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [pvm createChatUser:responseString];
+    }
+    else{
+        NSLog(@"%@", responseString);
+    }
+}
+
+
 @end

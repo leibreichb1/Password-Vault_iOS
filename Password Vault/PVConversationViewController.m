@@ -14,7 +14,6 @@
     NSArray *users;
     NSString *convo;
     NSString *message;
-    NSString *timeStr;
     UIActivityIndicatorView *spinner;
     BOOL sending;
     long height;
@@ -109,21 +108,20 @@
 }
 
 - (IBAction)sendClicked:(id)sender{
+    [messageBox resignFirstResponder];
     PVDataManager *pvm = [[PVDataManager alloc] init];
     NSString *user = [pvm getChatUser];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://devimiiphone1.nku.edu/research_chat_client/chat_client_server/send_message.php"]];
     [request setHTTPMethod:@"POST"];
     message = [messageBox text];
+    [messageBox setText:@""];
     if(message != nil && ![message isEqualToString:@""]){
-        NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
-        int intTime = (int)time;
-        timeStr = [[NSString alloc] initWithFormat:@"%d", intTime];
         NSString *postStr;
         if(convo != nil)
-            postStr = [[NSString alloc] initWithFormat:@"sender=%@&recipient=%@&message=%@&time=%d", user, convo, message, intTime];
+            postStr = [[NSString alloc] initWithFormat:@"sender=%@&recipient=%@&message=%@", user, convo, message];
         else
-            postStr = [[NSString alloc] initWithFormat:@"sender=%@&recipient=%@&message=%@&time=%d", user, [users objectAtIndex:[picker selectedRowInComponent:0]], message, intTime];
+            postStr = [[NSString alloc] initWithFormat:@"sender=%@&recipient=%@&message=%@", user, [users objectAtIndex:[picker selectedRowInComponent:0]], message];
         [request setHTTPBody:[postStr dataUsingEncoding:NSUTF8StringEncoding]];
         NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         if(conn){
@@ -140,33 +138,38 @@
 {
     if(sending){
         PVDataManager *pvm = [[PVDataManager alloc] init];
-        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        if([str isEqualToString:@"SENT"]){
-            NSString *user = [pvm getChatUser];
-            NSString *reci;
-            if(convo == nil)
-                reci = [users objectAtIndex:[picker selectedRowInComponent:0]];
-            else
-                reci = convo;
-            [pvm addMessageSender:user recipient:reci otherMember:reci message:message time:timeStr];
+         NSError *e;
+        id results = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&e];
+        NSDictionary *dict;
+        if([results isKindOfClass:[NSDictionary class]]){
+            dict = results;
+            if([dict objectForKey:@"sender"] && [dict objectForKey:@"message"] && [dict objectForKey:@"timestamp"] && [dict objectForKey:@"recipient"]){
+//                NSString *user = [pvm getChatUser];
+//                NSString *reci;
+//                if(convo == nil)
+//                    reci = [users objectAtIndex:[picker selectedRowInComponent:0]];
+//                else
+//                    reci = convo;
+                [pvm addMessageSender:[dict objectForKey:@"sender"] recipient:[dict objectForKey:@"recipient"] otherMember:[dict objectForKey:@"recipient"] message:message time:[dict objectForKey:@"timestamp"]];
             
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, height, 300.0f, 460.0f)];
-            [label setText:message];
-            label.lineBreakMode = UILineBreakModeWordWrap;
-            label.numberOfLines = 0;
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, height, 300.0f, 460.0f)];
+                [label setText:message];
+                label.lineBreakMode = UILineBreakModeWordWrap;
+                label.numberOfLines = 0;
             
-            [label sizeToFit];
+                [label sizeToFit];
             
-            int offset = 310.0f - label.frame.size.width;
-            UILabel *addLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset, height, label.frame.size.width, label.frame.size.height)];
-            [addLabel setText:[label text]];
+                int offset = 310.0f - label.frame.size.width;
+                UILabel *addLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset, height, label.frame.size.width, label.frame.size.height)];
+                [addLabel setText:[label text]];
             
-            height += addLabel.frame.size.height + 10.0f;
+                height += addLabel.frame.size.height + 10.0f;
             
-            [scrollView addSubview:addLabel];
+                [scrollView addSubview:addLabel];
             
-            CGSize size = CGSizeMake(320.0f, height);
-            [scrollView setContentSize:size];
+                CGSize size = CGSizeMake(320.0f, height);
+                [scrollView setContentSize:size];
+            }
         }
     }
     else{

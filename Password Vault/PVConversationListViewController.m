@@ -27,6 +27,11 @@
     return self;
 }
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    [self loadConvos];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
