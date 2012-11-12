@@ -29,24 +29,10 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    [self loadConvos];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     PVDataManager *pvm = [PVDataManager sharedDataManager];
     
     NSString *username = [pvm getChatUser];
-    UIBarButtonItem *infoBtn = [[UIBarButtonItem alloc] initWithTitle:@"New conversation" style:UIBarButtonItemStylePlain target:self action:@selector(newConvo)];
-	self.navigationItem.rightBarButtonItem = infoBtn;
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://devimiiphone1.nku.edu/research_chat_client/chat_client_server/get_messages.php"]];
     
@@ -60,6 +46,21 @@
 	else{
         //alert user failed
 	}
+
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *infoBtn = [[UIBarButtonItem alloc] initWithTitle:@"New conversation" style:UIBarButtonItemStylePlain target:self action:@selector(newConvo)];
+	self.navigationItem.rightBarButtonItem = infoBtn;
 }
 
 - (void)didReceiveMemoryWarning

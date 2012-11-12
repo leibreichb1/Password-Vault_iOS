@@ -193,7 +193,7 @@
     [results close];
     
     for(NSString *user in users){
-        command = [[NSString alloc] initWithFormat:@"SELECT * FROM conversations WHERE other_member='%@' ORDER BY timestamp DESC", user];
+        command = [[NSString alloc] initWithFormat:@"SELECT * FROM conversations WHERE other_member='%@' ORDER BY _id DESC", user];
         results = [db executeQuery:command];
         if([results next]){
             NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
@@ -212,7 +212,7 @@
 }
 
 -(NSMutableArray *)getConversation:(NSString *)other{
-    NSString *command = [[NSString alloc] initWithFormat:@"SELECT * FROM conversations WHERE other_member='%@' ORDER BY timestamp ASC", other];
+    NSString *command = [[NSString alloc] initWithFormat:@"SELECT * FROM conversations WHERE other_member='%@' ORDER BY _id ASC", other];
     NSMutableArray *convo = [[NSMutableArray alloc] init];
     FMDatabase *db = [[FMDatabase alloc] initWithPath:[self databasePath]];
     [db open];
