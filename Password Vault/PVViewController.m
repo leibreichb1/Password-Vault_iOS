@@ -82,7 +82,7 @@
 }
 
 - (IBAction)aboutBtnClicked:(id)sender {
-	NSString *msg = [[NSString alloc] initWithFormat:@"Password Vault is an application designed to teach developers and users about the dangers that an SQL Injection Attack can result with.  The application is vulnerable by design to produce a WOW factor to get people aware of dangers in Applications.\n\nCreated by Josh Newkirk and Brian Leibreich"];
+	NSString *msg = [[NSString alloc] initWithFormat:@"Password Vault is an application designed to teach developers and users about the dangers that an SQL Injection Attack can result with.  The application is vulnerable by design to produce a WOW factor to get people aware of dangers in Applications.\n\nCreated by the CAI and research team lead by Dr. Walden and Dr. Doyle"];
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"About Password Vault" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alert show];
 }
